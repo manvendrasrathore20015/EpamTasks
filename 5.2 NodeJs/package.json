@@ -1,5 +1,16 @@
 {
   "dependencies": {
     "process": "^0.11.10"
-  }
+  },
+  "name": "5.2-nodejs",
+  "description": "1. Create a node.js command line program which reads operation(add, subtract, multiply, division) and values as arguments and returns the appropriate output onto console as in below criteria",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
