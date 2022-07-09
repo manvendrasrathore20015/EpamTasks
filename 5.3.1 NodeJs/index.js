@@ -50,11 +50,11 @@ reqest format
 {     "id": integer,
  }
 */
-app.post('/delete',(req, res) => {
+app.put('/delete',(req, res) => {
     const id = req.body.id;
     for(let i = 0; i < users.length; i++){
-        const element = users[i];
-        if(element.id == id){
+        const element = users[i];  
+        if(element.id == id) {
             element.isDeleted = true;
             break;
         }
@@ -74,6 +74,7 @@ app.post('/delete',(req, res) => {
 }   */
 app.post('/create',(req, res) => {
     const data = req.body;
+    console.log(data);
     let idPresent = idExist(data.id);
     if(!idPresent) {
         users.push(data);
@@ -87,7 +88,7 @@ app.post('/create',(req, res) => {
 // To get whether given id is present in users or not
 function idExist(id) {
     for(let i=0; i<users.length; i++) {
-        if(user[i].id == id) {
+        if(users[i].id == id) {
             return true;
         }
     }
@@ -128,9 +129,8 @@ app.put('/update',(req, res) => {
      "limit": integer,
  }  */
 app.post('/getAutoSuggest',(req,res)=>{
-    const data = req.body;
-    const substring = data.substring;
-    var limit = data.limit;
+    const substring = req.body.substring;
+    var limit = req.body.limit;
     var list = [];
     for (let ind = 0; ind < users.length; ind++) {
         const element = users[ind];
