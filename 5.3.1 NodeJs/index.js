@@ -107,12 +107,12 @@ app.put('/update',(req, res) => {
     const data = req.body;
     let check = false;
     for(let i=0; i<users.length; i++) {
-        if(user[i].id == data.id) {
+        if(users[i].id == data.id) {
             check = true;
-            users[ind].login = data.login;
-            users[ind].password = data.password;
-            users[ind].age = data.age;
-            users[ind].isDeleted = data.isDeleted;
+            users[i].login = data.login;
+            users[i].password = data.password;
+            users[i].age = data.age;
+            users[i].isDeleted = data.isDeleted;
             break;
         }
     }
