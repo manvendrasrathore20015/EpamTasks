@@ -1,7 +1,7 @@
 const express = require('express');
-const joi = require('joi');
 const user = require('./user.js');
 const users = require('./user.js').users;
+const joi = require('joi');
 var currentUsers = [];
 const app = express();
 app.use(express.urlencoded({extended: true}));
@@ -170,7 +170,7 @@ const schema = joi.object({
         .max(15)
         .required(),
     password: joi.string()
-        .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$'))
+        .pattern(new RegExp('^(?=.*?[a-zA-Z])(?=.*?[0-9]).{3,30}$'))
         .required(),
     age: joi.number()
         .min(4)

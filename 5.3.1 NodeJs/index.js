@@ -128,6 +128,7 @@ app.put('/update',(req, res) => {
      "substring": string,
      "limit": integer,
  }  */
+
 app.post('/getAutoSuggest',(req,res)=>{
     const substring = req.body.substring;
     var limit = req.body.limit;
@@ -142,5 +143,4 @@ app.post('/getAutoSuggest',(req,res)=>{
     }
     res.json(list);     
 })
-
 app.listen(8080)
